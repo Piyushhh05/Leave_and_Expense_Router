@@ -1,0 +1,26 @@
+holiday_id,holiday_date,country,name
+HOL-001,2026-01-26,IN,Republic Day
+HOL-002,2026-08-15,IN,Independence Day
+HOL-003,2026-10-02,IN,Gandhi Jayanti
+HOL-004,2026-11-09,IN,Festival of Lights (illustrative)
+HOL-005,2026-12-25,IN,Christmas Day
+HOL-006,2026-01-01,US,New Year's Day
+HOL-007,2026-05-25,US,Memorial Day
+HOL-008,2026-07-03,US,Independence Day (observed)
+HOL-009,2026-09-07,US,Labor Day
+HOL-010,2026-11-26,US,Thanksgiving
+HOL-011,2026-12-25,US,Christmas Day
+HOL-012,2026-01-01,UK,New Year's Day
+HOL-013,2026-04-03,UK,Good Friday
+HOL-014,2026-04-06,UK,Easter Monday
+HOL-015,2026-05-04,UK,Early May Bank Holiday
+HOL-016,2026-08-31,UK,Summer Bank Holiday
+HOL-017,2026-12-25,UK,Christmas Day
+HOL-018,2026-12-28,UK,Boxing Day (substitute)
+HOL-019,2026-01-01,DE,New Year's Day
+HOL-020,2026-04-03,DE,Good Friday
+HOL-021,2026-04-06,DE,Easter Monday
+HOL-022,2026-05-01,DE,Labour Day
+HOL-023,2026-10-03,DE,German Unity Day
+HOL-024,2026-12-25,DE,Christmas Day
+HOL-025,2026-12-26,DE,Second Day of Christmas

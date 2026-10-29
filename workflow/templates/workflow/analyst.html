@@ -1,0 +1,19 @@
+{% extends "workflow/base.html" %}{% load ui %}
+{% block content %}
+<h1 class="h3">Operations analyst: exceptions and evaluation</h1>
+<div class="card mb-4"><div class="card-header">Control failures: planted anomalies vs what the detectors found</div><div class="card-body">
+  <p class="small text-muted">The planted labels come from the separate <code>ground_truth</code> table. They are used only on this page to score the detectors - never to make a decision.</p>
+  <table class="table table-sm mb-0"><thead><tr><th>Issue</th><th>Planted</th><th>Detected</th><th>Found</th><th>False alarms</th><th>Missed</th><th>Recall</th></tr></thead>
+  <tbody>{% for r in table %}<tr><td><a href="?issue={{ r.issue }}">{{ r.issue|pretty }}</a></td><td>{{ r.planted }}</td><td>{{ r.detected }}</td><td>{{ r.hit }}</td><td>{{ r.false_alarms }}</td><td>{{ r.missed }}</td><td>{{ r.recall }}%</td></tr>{% endfor %}</tbody></table>
+</div></div>
+<div class="row g-3 mb-4">
+  <div class="col-md-6"><div class="card"><div class="card-header">Leave requests stopped at screening</div><div class="card-body"><table class="table table-sm mb-0">{% for k, v in leave_rejections.items %}<tr><td><a href="{% url 'leave_list' %}?reason={{ k }}">{{ k|pretty }}</a></td><td class="text-end">{{ v }}</td></tr>{% endfor %}</table></div></div></div>
+  <div class="col-md-6"><div class="card"><div class="card-header">Expense claims rejected</div><div class="card-body"><table class="table table-sm mb-0">{% for k, v in claim_rejections.items %}<tr><td><a href="{% url 'expense_list' %}?reason={{ k }}">{{ k|pretty }}</a></td><td class="text-end">{{ v }}</td></tr>{% endfor %}</table></div></div></div>
+</div>
+<h2 class="h5">Detected exceptions {% if issue %}<small>({{ issue|pretty }}) <a href="{% url 'analyst' %}">clear</a></small>{% endif %}</h2>
+<table class="table table-sm table-hover"><thead><tr><th>Id</th><th>Record</th><th>Issue</th><th>Detail</th></tr></thead>
+<tbody>{% for d in page %}<tr><td>{{ d.pk }}</td>
+  <td>{% if d.entity_type == "LEAVE_REQUEST" %}<a href="{% url 'leave_detail' d.entity_id %}">{{ d.entity_id }}</a>{% else %}<a href="{% url 'expense_detail' d.entity_id %}">{{ d.entity_id }}</a>{% endif %}</td>
+  <td>{{ d.issue_type|pretty }}</td><td class="small">{{ d.detail }}</td></tr>{% endfor %}</tbody></table>
+{% include "workflow/_pager.html" %}
+{% endblock %}

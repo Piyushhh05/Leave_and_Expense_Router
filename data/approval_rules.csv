@@ -1,0 +1,13 @@
+approval_rule_id,domain,step_role,condition_type,threshold,match_value,min_approver_level,effective_from,effective_to,description
+APRL-L1,LEAVE,MANAGER,ALWAYS,,,2,2025-01-01,,Every leave request needs the direct manager
+APRL-L2,LEAVE,SKIP_MANAGER,DAYS_ABOVE,3,,3,2025-01-01,,More than 3 business days also needs the manager's manager
+APRL-L3,LEAVE,HR_HEAD,DAYS_ABOVE,10,,4,2025-01-01,,More than 10 business days also needs the HR head
+APRL-L4,LEAVE,HR_HEAD,LEAVE_TYPE,,UNPAID,4,2025-01-01,,Unpaid leave always needs the HR head
+APRL-E1,EXPENSE,MANAGER,ALWAYS,,,2,2025-01-01,,Every expense claim needs the direct manager
+APRL-E2,EXPENSE,SKIP_MANAGER,AMOUNT_ABOVE,500,,3,2025-01-01,,Claim total above 500 USD also needs the manager's manager
+APRL-E3,EXPENSE,SKIP_MANAGER,CATEGORY,,CLIENT_ENTERTAINMENT,3,2025-01-01,,Client entertainment always needs the manager's manager
+APRL-E4,EXPENSE,FINANCE_CONTROLLER,AMOUNT_ABOVE,2000,,3,2025-01-01,,Claim total above 2000 USD also needs the finance controller
+APRL-E5,EXPENSE,FINANCE_CONTROLLER,POLICY_BREACH,,,3,2025-01-01,,A line above its policy limit needs the finance controller (exception path)
+APRL-E6,EXPENSE,FINANCE_CONTROLLER,COUNTRY_AMOUNT,1000,DE|UK,3,2025-01-01,,DE/UK claims above 1000 USD need the finance controller
+APRL-E7,EXPENSE,CFO,AMOUNT_ABOVE,10000,,4,2025-01-01,,Claim total above 10000 USD also needs the CFO
+APRL-E8,EXPENSE,CFO,BUDGET_EXCEEDED,,,4,2025-01-01,,A claim that pushes its cost centre over budget needs the CFO

@@ -1,0 +1,177 @@
+[
+ {
+  "cost_center_id": "CC-000",
+  "name": "Executive Office",
+  "country": "US",
+  "department": "Executive",
+  "annual_budget": 3600
+ },
+ {
+  "cost_center_id": "CC-001",
+  "name": "Engineering DE",
+  "country": "DE",
+  "department": "Engineering",
+  "annual_budget": 46800
+ },
+ {
+  "cost_center_id": "CC-002",
+  "name": "Engineering IN",
+  "country": "IN",
+  "department": "Engineering",
+  "annual_budget": 129600
+ },
+ {
+  "cost_center_id": "CC-003",
+  "name": "Engineering UK",
+  "country": "UK",
+  "department": "Engineering",
+  "annual_budget": 54000
+ },
+ {
+  "cost_center_id": "CC-004",
+  "name": "Engineering US",
+  "country": "US",
+  "department": "Engineering",
+  "annual_budget": 32400
+ },
+ {
+  "cost_center_id": "CC-005",
+  "name": "Finance DE",
+  "country": "DE",
+  "department": "Finance",
+  "annual_budget": 18000
+ },
+ {
+  "cost_center_id": "CC-006",
+  "name": "Finance IN",
+  "country": "IN",
+  "department": "Finance",
+  "annual_budget": 115200
+ },
+ {
+  "cost_center_id": "CC-007",
+  "name": "Finance UK",
+  "country": "UK",
+  "department": "Finance",
+  "annual_budget": 25200
+ },
+ {
+  "cost_center_id": "CC-008",
+  "name": "Finance US",
+  "country": "US",
+  "department": "Finance",
+  "annual_budget": 39600
+ },
+ {
+  "cost_center_id": "CC-009",
+  "name": "HR DE",
+  "country": "DE",
+  "department": "HR",
+  "annual_budget": 18000
+ },
+ {
+  "cost_center_id": "CC-010",
+  "name": "HR IN",
+  "country": "IN",
+  "department": "HR",
+  "annual_budget": 147600
+ },
+ {
+  "cost_center_id": "CC-011",
+  "name": "HR UK",
+  "country": "UK",
+  "department": "HR",
+  "annual_budget": 28800
+ },
+ {
+  "cost_center_id": "CC-012",
+  "name": "HR US",
+  "country": "US",
+  "department": "HR",
+  "annual_budget": 43200
+ },
+ {
+  "cost_center_id": "CC-013",
+  "name": "Marketing DE",
+  "country": "DE",
+  "department": "Marketing",
+  "annual_budget": 25200
+ },
+ {
+  "cost_center_id": "CC-014",
+  "name": "Marketing IN",
+  "country": "IN",
+  "department": "Marketing",
+  "annual_budget": 111600
+ },
+ {
+  "cost_center_id": "CC-015",
+  "name": "Marketing UK",
+  "country": "UK",
+  "department": "Marketing",
+  "annual_budget": 43200
+ },
+ {
+  "cost_center_id": "CC-016",
+  "name": "Marketing US",
+  "country": "US",
+  "department": "Marketing",
+  "annual_budget": 57600
+ },
+ {
+  "cost_center_id": "CC-017",
+  "name": "Operations DE",
+  "country": "DE",
+  "department": "Operations",
+  "annual_budget": 46800
+ },
+ {
+  "cost_center_id": "CC-018",
+  "name": "Operations IN",
+  "country": "IN",
+  "department": "Operations",
+  "annual_budget": 104400
+ },
+ {
+  "cost_center_id": "CC-019",
+  "name": "Operations UK",
+  "country": "UK",
+  "department": "Operations",
+  "annual_budget": 21600
+ },
+ {
+  "cost_center_id": "CC-020",
+  "name": "Operations US",
+  "country": "US",
+  "department": "Operations",
+  "annual_budget": 61200
+ },
+ {
+  "cost_center_id": "CC-021",
+  "name": "Sales DE",
+  "country": "DE",
+  "department": "Sales",
+  "annual_budget": 36000
+ },
+ {
+  "cost_center_id": "CC-022",
+  "name": "Sales IN",
+  "country": "IN",
+  "department": "Sales",
+  "annual_budget": 126000
+ },
+ {
+  "cost_center_id": "CC-023",
+  "name": "Sales UK",
+  "country": "UK",
+  "department": "Sales",
+  "annual_budget": 36000
+ },
+ {
+  "cost_center_id": "CC-024",
+  "name": "Sales US",
+  "country": "US",
+  "department": "Sales",
+  "annual_budget": 68400
+ }
+]

@@ -1,0 +1,17 @@
+{% load ui %}
+<table class="table table-sm align-middle">
+  <thead><tr><th>#</th><th>Role</th><th>Approver</th><th>Status</th><th>Decided</th><th>Why this step exists (routing rule)</th><th>Decision reason</th></tr></thead>
+  <tbody>
+  {% for s in steps %}
+    <tr>
+      <td>{{ s.step_no }}</td><td>{{ s.approver_role|pretty }}</td>
+      <td><a href="{% url 'employee_detail' s.approver_id %}">{{ s.approver.full_name }}</a></td>
+      <td><span class="badge text-bg-{{ s.status|badge }}">{{ s.status }}</span></td>
+      <td>{{ s.decided_date|default:"-" }}</td>
+      <td class="small">{{ s.routing_reason }}</td>
+      <td class="small">{% if s.decision_reason_code %}<strong>{{ s.decision_reason_code|pretty }}</strong><br>{% endif %}{{ s.decision_reason|default:"" }}</td>
+    </tr>
+  {% empty %}<tr><td colspan="7" class="text-muted">No approval steps: the request was rejected at screening, before routing.</td></tr>
+  {% endfor %}
+  </tbody>
+</table>

@@ -1,0 +1,7 @@
+body { background: #f6f7f9; }
+.card { border-color: #e3e6ea; }
+.card-header { background: #fff; font-weight: 600; }
+.kpi-n { font-size: 1.9rem; font-weight: 700; line-height: 1.1; }
+table th { white-space: nowrap; }
+.route-step { border-left: 4px solid #0d6efd; padding-left: .75rem; margin-bottom: .75rem; }
+.route-step.dup { border-color: #adb5bd; opacity: .7; }

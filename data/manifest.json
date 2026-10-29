@@ -1,0 +1,40 @@
+{
+ "seed": 20261022,
+ "scale": 1.0,
+ "as_of_date": "2026-10-22",
+ "command": "python -m generator.generate_data --scale 1.0 --seed 20261022",
+ "row_counts": {
+  "holidays": 25,
+  "cost_centers": 25,
+  "employees": 400,
+  "leave_policies": 6,
+  "leave_balances": 1200,
+  "expense_policies": 8,
+  "approval_rules": 12,
+  "leave_requests": 800,
+  "expense_claims": 1000,
+  "expense_lines": 3121,
+  "approval_steps": 2815,
+  "reimbursements": 863,
+  "status_events": 6015,
+  "ground_truth": 1034,
+  "detected_exceptions": 58
+ },
+ "sha256": {
+  "holidays.csv": "75d04e918db4189f8cafdf5a2dd6ef559737f62f083d77a1688c443b26a78a52",
+  "cost_centers.csv": "d244ed517fa1557ae1de2130de335ceceecadaa8409585070f1ebf8ca404951d",
+  "employees.csv": "affcd6668dcecc48d24c5d3d90801fb9cc663e42e1a9a2c79c3d0590eab4e5c5",
+  "leave_policies.csv": "a14210f78938b2db79a0fb00b04bf0e05a91bc4aae08f13a49b3c0d8a96ba2b6",
+  "leave_balances.csv": "ff59ebccd97b917b8df0b1e338da507add2887799abf2d676a261c5db0b8d5dd",
+  "expense_policies.csv": "aaa4cafa66caaa4c8e3a9cca09226232093242122db5a533010d259554cdfb5a",
+  "approval_rules.csv": "7c3154d17ca2a2621ac90a29b634afe930bc5c2cf52fae2590a2f2d3f10facdd",
+  "leave_requests.csv": "d97786a6528691e3e9145164747e9dee9a0291ba6ef6808e536554711b883395",
+  "expense_claims.csv": "10b7a32c99ffe5c6954a8ab35f9646f08dcd8eba5c57d5441438fe6a7a48ac27",
+  "expense_lines.csv": "6aed8e9d88861531f4c390be2cb925451f4ebcedf7b437a23ab44711b1b5602d",
+  "approval_steps.csv": "cebf08c0bd9aafc8404c8ea40a13e389a6fe8f83066e3652d49b71d9ef8cd1ce",
+  "reimbursements.csv": "fed11e8c72eb2bb2592f416d528d2cdd1aff180fc2b65ef87b8ca7aafd70b2ed",
+  "status_events.csv": "1788bb34cf4d9e0bb155ca590332928514aea434761e7b483ff2c3fbb6a4955d",
+  "ground_truth.csv": "1b9638ba3bb076fff8092656912b4f1e8ac8074ab6d5d29c217640ef5b15168d",
+  "detected_exceptions.csv": "1ca85fd38a2d5d51e5a89561d67d87c31e48d4f5a2ba653b736299faf695538d"
+ }
+}

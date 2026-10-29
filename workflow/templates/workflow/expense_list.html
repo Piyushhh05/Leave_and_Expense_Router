@@ -1,0 +1,20 @@
+{% extends "workflow/base.html" %}{% load ui %}
+{% block content %}
+<h1 class="h3">Expense claims</h1>
+<form class="row g-2 mb-3" method="get">
+  <div class="col-md-4"><input class="form-control" name="q" value="{{ q }}" placeholder="Search name, employee id or claim id"></div>
+  <div class="col-md-3"><select class="form-select" name="status"><option value="">Any status</option>{% for s in statuses %}<option {% if s == status %}selected{% endif %}>{{ s }}</option>{% endfor %}</select></div>
+  <div class="col-md-3"><select class="form-select" name="reason"><option value="">Any reason</option>{% for r in reasons %}<option value="{{ r }}" {% if r == reason %}selected{% endif %}>{{ r|pretty }}</option>{% endfor %}</select></div>
+  <div class="col-md-2"><button class="btn btn-primary w-100">Filter</button></div>
+</form>
+<table class="table table-hover table-sm align-middle">
+  <thead><tr><th>Claim</th><th>Employee</th><th>Submitted</th><th class="text-end">Total (USD)</th><th>Lines</th><th>Flags</th><th>Status</th><th>Reason</th></tr></thead>
+  <tbody>{% for c in page %}
+    <tr><td><a href="{% url 'expense_detail' c.pk %}">{{ c.pk }}</a></td><td>{{ c.employee.full_name }}</td><td>{{ c.submitted_date }}</td>
+        <td class="text-end">{{ c.total_amount }}</td><td>{{ c.line_count }}</td>
+        <td>{% if c.has_policy_breach %}<span class="badge text-bg-warning">policy</span>{% endif %}{% if c.budget_exceeded %} <span class="badge text-bg-warning">budget</span>{% endif %}</td>
+        <td><span class="badge text-bg-{{ c.status|badge }}">{{ c.status|pretty }}</span></td><td class="small">{{ c.final_reason_code|pretty }}</td></tr>
+  {% endfor %}</tbody>
+</table>
+{% include "workflow/_pager.html" %}
+{% endblock %}

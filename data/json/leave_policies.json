@@ -1,0 +1,80 @@
+[
+ {
+  "leave_policy_id": "LPOL-01",
+  "name": "Annual Leave - India",
+  "leave_type": "ANNUAL",
+  "applies_to_countries": "IN",
+  "annual_days": 18,
+  "accrual_per_month": 1.5,
+  "carry_forward_cap": 5,
+  "max_consecutive_days": 15,
+  "deducts_balance": true,
+  "effective_from": "2025-01-01",
+  "effective_to": null
+ },
+ {
+  "leave_policy_id": "LPOL-02",
+  "name": "Annual Leave - USA",
+  "leave_type": "ANNUAL",
+  "applies_to_countries": "US",
+  "annual_days": 15,
+  "accrual_per_month": 1.25,
+  "carry_forward_cap": 5,
+  "max_consecutive_days": 15,
+  "deducts_balance": true,
+  "effective_from": "2025-01-01",
+  "effective_to": null
+ },
+ {
+  "leave_policy_id": "LPOL-03",
+  "name": "Annual Leave - UK/Germany",
+  "leave_type": "ANNUAL",
+  "applies_to_countries": "UK|DE",
+  "annual_days": 24,
+  "accrual_per_month": 2.0,
+  "carry_forward_cap": 5,
+  "max_consecutive_days": 20,
+  "deducts_balance": true,
+  "effective_from": "2025-01-01",
+  "effective_to": null
+ },
+ {
+  "leave_policy_id": "LPOL-04",
+  "name": "Sick Leave - Global",
+  "leave_type": "SICK",
+  "applies_to_countries": "ALL",
+  "annual_days": 12,
+  "accrual_per_month": 1.0,
+  "carry_forward_cap": 0,
+  "max_consecutive_days": 5,
+  "deducts_balance": true,
+  "effective_from": "2025-01-01",
+  "effective_to": null
+ },
+ {
+  "leave_policy_id": "LPOL-05",
+  "name": "Casual Leave - Global",
+  "leave_type": "CASUAL",
+  "applies_to_countries": "ALL",
+  "annual_days": 6,
+  "accrual_per_month": 0.5,
+  "carry_forward_cap": 0,
+  "max_consecutive_days": 2,
+  "deducts_balance": true,
+  "effective_from": "2025-01-01",
+  "effective_to": null
+ },
+ {
+  "leave_policy_id": "LPOL-06",
+  "name": "Unpaid Leave - Global",
+  "leave_type": "UNPAID",
+  "applies_to_countries": "ALL",
+  "annual_days": 0,
+  "accrual_per_month": 0.0,
+  "carry_forward_cap": 0,
+  "max_consecutive_days": 30,
+  "deducts_balance": false,
+  "effective_from": "2025-01-01",
+  "effective_to": null
+ }
+]

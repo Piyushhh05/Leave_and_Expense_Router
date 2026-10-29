@@ -1,0 +1,49 @@
+{% extends "workflow/base.html" %}{% load ui %}
+{% block content %}
+<h1 class="h3 mb-1">Process owner dashboard</h1>
+<p class="text-muted">Leave and expense requests routed by policy, balances, budgets and approval authority.</p>
+
+<div class="row g-3 mb-4">
+  <div class="col-6 col-md-3"><div class="card kpi"><div class="card-body"><div class="kpi-n">{{ n_leave }}</div>Leave requests<br><small class="text-muted">{{ pending_leave }} waiting for approval</small></div></div></div>
+  <div class="col-6 col-md-3"><div class="card kpi"><div class="card-body"><div class="kpi-n">{{ n_claims }}</div>Expense claims<br><small class="text-muted">{{ pending_claims }} waiting for approval</small></div></div></div>
+  <div class="col-6 col-md-3"><div class="card kpi"><div class="card-body"><div class="kpi-n">${{ paid_total|floatformat:'0g' }}</div>Reimbursed (paid)<br><small class="text-muted">only after final approval</small></div></div></div>
+  <div class="col-6 col-md-3"><div class="card kpi"><div class="card-body"><div class="kpi-n">{{ n_employees }}</div>Employees<br><small class="text-muted">5-level hierarchy</small></div></div></div>
+</div>
+
+<div class="row g-4">
+  <div class="col-lg-6">
+    <div class="card"><div class="card-header">Leave requests by status</div><div class="card-body">
+      {% for k, v in leave_status.items %}<a class="me-2 text-decoration-none" href="{% url 'leave_list' %}?status={{ k }}"><span class="badge text-bg-{{ k|badge }}">{{ k|pretty }}: {{ v }}</span></a>{% endfor %}
+      <hr><div class="small text-muted mb-1">Decision reasons (decided requests)</div>
+      <table class="table table-sm mb-0">{% for k, v in leave_reasons.items %}<tr><td><a href="{% url 'leave_list' %}?reason={{ k }}">{{ k|pretty }}</a></td><td class="text-end">{{ v }}</td></tr>{% endfor %}</table>
+    </div></div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card"><div class="card-header">Expense claims by status</div><div class="card-body">
+      {% for k, v in claim_status.items %}<a class="me-2 text-decoration-none" href="{% url 'expense_list' %}?status={{ k }}"><span class="badge text-bg-{{ k|badge }}">{{ k|pretty }}: {{ v }}</span></a>{% endfor %}
+      <hr><div class="small text-muted mb-1">Decision reasons (decided claims)</div>
+      <table class="table table-sm mb-0">{% for k, v in claim_reasons.items %}<tr><td><a href="{% url 'expense_list' %}?reason={{ k }}">{{ k|pretty }}</a></td><td class="text-end">{{ v }}</td></tr>{% endfor %}</table>
+    </div></div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card"><div class="card-header">Approval path length of expense claims</div><div class="card-body">
+      <p class="small text-muted">0 steps = rejected at screening, before routing.</p>
+      <table class="table table-sm mb-0"><tr><th>Approval steps</th><th class="text-end">Claims</th></tr>
+      {% for n, c in path_lengths %}<tr><td>{{ n }}</td><td class="text-end">{{ c }}</td></tr>{% endfor %}</table>
+    </div></div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card"><div class="card-header">Cost centre budget used (highest 8)</div><div class="card-body">
+      {% for b in budgets %}
+        <div class="small d-flex justify-content-between"><span>{{ b.cc.name }}</span><span>${{ b.used|floatformat:'0g' }} of ${{ b.cc.annual_budget|floatformat:'0g' }}</span></div>
+        <div class="progress mb-2" style="height:10px"><div class="progress-bar {% if b.pct > 100 %}bg-danger{% elif b.pct > 85 %}bg-warning{% else %}bg-success{% endif %}" style="width:{% if b.pct > 100 %}100{% else %}{{ b.pct }}{% endif %}%"></div></div>
+      {% endfor %}
+    </div></div>
+  </div>
+  <div class="col-12">
+    <div class="card"><div class="card-header">Control failures found by the detectors <a class="float-end small" href="{% url 'analyst' %}">open analyst view</a></div><div class="card-body">
+      {% for k, v in detections.items %}<span class="badge text-bg-dark me-1">{{ k|pretty }}: {{ v }}</span>{% endfor %}
+    </div></div>
+  </div>
+</div>
+{% endblock %}

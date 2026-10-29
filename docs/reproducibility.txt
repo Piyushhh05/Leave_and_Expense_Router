@@ -1,0 +1,20 @@
+table                  rows run1 rows run2  checksum run1 / run2
+holidays                      25        25  75d04e918db4 / 75d04e918db4  SAME
+cost_centers                  25        25  d244ed517fa1 / d244ed517fa1  SAME
+employees                    400       400  affcd6668dce / affcd6668dce  SAME
+leave_policies                 6         6  a14210f78938 / a14210f78938  SAME
+leave_balances              1200      1200  ff59ebccd97b / ff59ebccd97b  SAME
+expense_policies               8         8  aaa4cafa66ca / aaa4cafa66ca  SAME
+approval_rules                12        12  7c3154d17ca2 / 7c3154d17ca2  SAME
+leave_requests               800       800  d97786a65286 / d97786a65286  SAME
+expense_claims              1000      1000  10b7a32c99ff / 10b7a32c99ff  SAME
+expense_lines               3121      3121  6aed8e9d8886 / 6aed8e9d8886  SAME
+approval_steps              2815      2815  cebf08c0bd9a / cebf08c0bd9a  SAME
+reimbursements               863       863  fed11e8c72eb / fed11e8c72eb  SAME
+status_events               6015      6015  1788bb34cf4d / 1788bb34cf4d  SAME
+ground_truth                1034      1034  1b9638ba3bb0 / 1b9638ba3bb0  SAME
+detected_exceptions           58        58  1ca85fd38a2d / 1ca85fd38a2d  SAME
+
+Same seed twice  : IDENTICAL
+Different seed   : 11 of 15 files differ (proves the check can fail)
+Matches ./data   : YES

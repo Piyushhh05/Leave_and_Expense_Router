@@ -1,0 +1,47 @@
+{% load static ui %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Leave & Expense Router{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'workflow/vendor/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'workflow/style.css' %}">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-xl">
+    <a class="navbar-brand" href="{% url 'dashboard' %}">Leave &amp; Expense Router</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link" href="{% url 'new_request' %}">New request</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'inbox' %}">Approver inbox</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'leave_list' %}">Leave</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'expense_list' %}">Expenses</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'analyst' %}">Analyst</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'employee_list' %}">Employees</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'policies' %}">Policies</a></li>
+      </ul>
+      <a class="btn btn-outline-light btn-sm" href="/admin/">Admin</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container-xl py-4">
+  {% for message in messages %}
+    <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible">
+      {{ message }}<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+</main>
+
+<footer class="container-xl py-3 text-muted small border-top">
+  Synthetic data only (generated with seed 20261022, as-of date 2026-10-22). Amounts in USD.
+</footer>
+<script src="{% static 'workflow/vendor/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'workflow/app.js' %}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

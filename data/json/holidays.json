@@ -1,0 +1,152 @@
+[
+ {
+  "holiday_id": "HOL-001",
+  "holiday_date": "2026-01-26",
+  "country": "IN",
+  "name": "Republic Day"
+ },
+ {
+  "holiday_id": "HOL-002",
+  "holiday_date": "2026-08-15",
+  "country": "IN",
+  "name": "Independence Day"
+ },
+ {
+  "holiday_id": "HOL-003",
+  "holiday_date": "2026-10-02",
+  "country": "IN",
+  "name": "Gandhi Jayanti"
+ },
+ {
+  "holiday_id": "HOL-004",
+  "holiday_date": "2026-11-09",
+  "country": "IN",
+  "name": "Festival of Lights (illustrative)"
+ },
+ {
+  "holiday_id": "HOL-005",
+  "holiday_date": "2026-12-25",
+  "country": "IN",
+  "name": "Christmas Day"
+ },
+ {
+  "holiday_id": "HOL-006",
+  "holiday_date": "2026-01-01",
+  "country": "US",
+  "name": "New Year's Day"
+ },
+ {
+  "holiday_id": "HOL-007",
+  "holiday_date": "2026-05-25",
+  "country": "US",
+  "name": "Memorial Day"
+ },
+ {
+  "holiday_id": "HOL-008",
+  "holiday_date": "2026-07-03",
+  "country": "US",
+  "name": "Independence Day (observed)"
+ },
+ {
+  "holiday_id": "HOL-009",
+  "holiday_date": "2026-09-07",
+  "country": "US",
+  "name": "Labor Day"
+ },
+ {
+  "holiday_id": "HOL-010",
+  "holiday_date": "2026-11-26",
+  "country": "US",
+  "name": "Thanksgiving"
+ },
+ {
+  "holiday_id": "HOL-011",
+  "holiday_date": "2026-12-25",
+  "country": "US",
+  "name": "Christmas Day"
+ },
+ {
+  "holiday_id": "HOL-012",
+  "holiday_date": "2026-01-01",
+  "country": "UK",
+  "name": "New Year's Day"
+ },
+ {
+  "holiday_id": "HOL-013",
+  "holiday_date": "2026-04-03",
+  "country": "UK",
+  "name": "Good Friday"
+ },
+ {
+  "holiday_id": "HOL-014",
+  "holiday_date": "2026-04-06",
+  "country": "UK",
+  "name": "Easter Monday"
+ },
+ {
+  "holiday_id": "HOL-015",
+  "holiday_date": "2026-05-04",
+  "country": "UK",
+  "name": "Early May Bank Holiday"
+ },
+ {
+  "holiday_id": "HOL-016",
+  "holiday_date": "2026-08-31",
+  "country": "UK",
+  "name": "Summer Bank Holiday"
+ },
+ {
+  "holiday_id": "HOL-017",
+  "holiday_date": "2026-12-25",
+  "country": "UK",
+  "name": "Christmas Day"
+ },
+ {
+  "holiday_id": "HOL-018",
+  "holiday_date": "2026-12-28",
+  "country": "UK",
+  "name": "Boxing Day (substitute)"
+ },
+ {
+  "holiday_id": "HOL-019",
+  "holiday_date": "2026-01-01",
+  "country": "DE",
+  "name": "New Year's Day"
+ },
+ {
+  "holiday_id": "HOL-020",
+  "holiday_date": "2026-04-03",
+  "country": "DE",
+  "name": "Good Friday"
+ },
+ {
+  "holiday_id": "HOL-021",
+  "holiday_date": "2026-04-06",
+  "country": "DE",
+  "name": "Easter Monday"
+ },
+ {
+  "holiday_id": "HOL-022",
+  "holiday_date": "2026-05-01",
+  "country": "DE",
+  "name": "Labour Day"
+ },
+ {
+  "holiday_id": "HOL-023",
+  "holiday_date": "2026-10-03",
+  "country": "DE",
+  "name": "German Unity Day"
+ },
+ {
+  "holiday_id": "HOL-024",
+  "holiday_date": "2026-12-25",
+  "country": "DE",
+  "name": "Christmas Day"
+ },
+ {
+  "holiday_id": "HOL-025",
+  "holiday_date": "2026-12-26",
+  "country": "DE",
+  "name": "Second Day of Christmas"
+ }
+]

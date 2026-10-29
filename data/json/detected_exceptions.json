@@ -1,0 +1,408 @@
+[
+ {
+  "detection_id": "DET-000001",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000010",
+  "issue_type": "MISSING_COST_CENTER",
+  "detail": "claim has no cost centre"
+ },
+ {
+  "detection_id": "DET-000002",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000050",
+  "issue_type": "MISSING_COST_CENTER",
+  "detail": "claim has no cost centre"
+ },
+ {
+  "detection_id": "DET-000003",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000061",
+  "issue_type": "SPLIT_CLAIM_EVASION",
+  "detail": "3 claims just under 500 within 7 days by EMP-000261"
+ },
+ {
+  "detection_id": "DET-000004",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000068",
+  "issue_type": "SPLIT_CLAIM_EVASION",
+  "detail": "3 claims just under 500 within 7 days by EMP-000261"
+ },
+ {
+  "detection_id": "DET-000005",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000073",
+  "issue_type": "SPLIT_CLAIM_EVASION",
+  "detail": "3 claims just under 500 within 7 days by EMP-000261"
+ },
+ {
+  "detection_id": "DET-000006",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000076",
+  "issue_type": "DUPLICATE_REIMBURSEMENT",
+  "detail": "paid more than once: RMB-2026-000065, RMB-2026-000082"
+ },
+ {
+  "detection_id": "DET-000007",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000191",
+  "issue_type": "SPLIT_CLAIM_EVASION",
+  "detail": "3 claims just under 500 within 7 days by EMP-000289"
+ },
+ {
+  "detection_id": "DET-000008",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000198",
+  "issue_type": "SPLIT_CLAIM_EVASION",
+  "detail": "3 claims just under 500 within 7 days by EMP-000289"
+ },
+ {
+  "detection_id": "DET-000009",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000199",
+  "issue_type": "SPLIT_CLAIM_EVASION",
+  "detail": "3 claims just under 500 within 7 days by EMP-000289"
+ },
+ {
+  "detection_id": "DET-000010",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000233",
+  "issue_type": "MISSING_COST_CENTER",
+  "detail": "claim has no cost centre"
+ },
+ {
+  "detection_id": "DET-000011",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000263",
+  "issue_type": "EXPENSE_OUTSIDE_EMPLOYMENT",
+  "detail": "line dated 2026-03-31 is outside employment"
+ },
+ {
+  "detection_id": "DET-000012",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000292",
+  "issue_type": "MISSING_COST_CENTER",
+  "detail": "claim has no cost centre"
+ },
+ {
+  "detection_id": "DET-000013",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000364",
+  "issue_type": "EXPENSE_OUTSIDE_EMPLOYMENT",
+  "detail": "line dated 2026-04-08 is outside employment"
+ },
+ {
+  "detection_id": "DET-000014",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000404",
+  "issue_type": "EXPENSE_OUTSIDE_EMPLOYMENT",
+  "detail": "line dated 2026-05-03 is outside employment"
+ },
+ {
+  "detection_id": "DET-000015",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000414",
+  "issue_type": "DUPLICATE_REIMBURSEMENT",
+  "detail": "paid more than once: RMB-2026-000377, RMB-2026-000390"
+ },
+ {
+  "detection_id": "DET-000016",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000464",
+  "issue_type": "SPLIT_CLAIM_EVASION",
+  "detail": "3 claims just under 500 within 7 days by EMP-000373"
+ },
+ {
+  "detection_id": "DET-000017",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000467",
+  "issue_type": "MISSING_COST_CENTER",
+  "detail": "claim has no cost centre"
+ },
+ {
+  "detection_id": "DET-000018",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000470",
+  "issue_type": "SPLIT_CLAIM_EVASION",
+  "detail": "3 claims just under 500 within 7 days by EMP-000373"
+ },
+ {
+  "detection_id": "DET-000019",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000471",
+  "issue_type": "SPLIT_CLAIM_EVASION",
+  "detail": "3 claims just under 500 within 7 days by EMP-000373"
+ },
+ {
+  "detection_id": "DET-000020",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000472",
+  "issue_type": "SELF_APPROVAL",
+  "detail": "step 1 approved by the requester"
+ },
+ {
+  "detection_id": "DET-000021",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000505",
+  "issue_type": "SPLIT_CLAIM_EVASION",
+  "detail": "3 claims just under 500 within 7 days by EMP-000238"
+ },
+ {
+  "detection_id": "DET-000022",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000510",
+  "issue_type": "MISSING_COST_CENTER",
+  "detail": "claim has no cost centre"
+ },
+ {
+  "detection_id": "DET-000023",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000511",
+  "issue_type": "SPLIT_CLAIM_EVASION",
+  "detail": "3 claims just under 500 within 7 days by EMP-000238"
+ },
+ {
+  "detection_id": "DET-000024",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000516",
+  "issue_type": "SPLIT_CLAIM_EVASION",
+  "detail": "3 claims just under 500 within 7 days by EMP-000238"
+ },
+ {
+  "detection_id": "DET-000025",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000546",
+  "issue_type": "MISSING_COST_CENTER",
+  "detail": "claim has no cost centre"
+ },
+ {
+  "detection_id": "DET-000026",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000557",
+  "issue_type": "EXPENSE_OUTSIDE_EMPLOYMENT",
+  "detail": "line dated 2026-04-21 is outside employment"
+ },
+ {
+  "detection_id": "DET-000027",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000567",
+  "issue_type": "DUPLICATE_REIMBURSEMENT",
+  "detail": "paid more than once: RMB-2026-000514, RMB-2026-000550"
+ },
+ {
+  "detection_id": "DET-000028",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000568",
+  "issue_type": "SELF_APPROVAL",
+  "detail": "step 1 approved by the requester"
+ },
+ {
+  "detection_id": "DET-000029",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000603",
+  "issue_type": "SPLIT_CLAIM_EVASION",
+  "detail": "3 claims just under 500 within 7 days by EMP-000394"
+ },
+ {
+  "detection_id": "DET-000030",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000606",
+  "issue_type": "SPLIT_CLAIM_EVASION",
+  "detail": "3 claims just under 500 within 7 days by EMP-000394"
+ },
+ {
+  "detection_id": "DET-000031",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000612",
+  "issue_type": "SPLIT_CLAIM_EVASION",
+  "detail": "3 claims just under 500 within 7 days by EMP-000295"
+ },
+ {
+  "detection_id": "DET-000032",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000613",
+  "issue_type": "SPLIT_CLAIM_EVASION",
+  "detail": "3 claims just under 500 within 7 days by EMP-000394"
+ },
+ {
+  "detection_id": "DET-000033",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000620",
+  "issue_type": "SPLIT_CLAIM_EVASION",
+  "detail": "3 claims just under 500 within 7 days by EMP-000295"
+ },
+ {
+  "detection_id": "DET-000034",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000621",
+  "issue_type": "SPLIT_CLAIM_EVASION",
+  "detail": "3 claims just under 500 within 7 days by EMP-000295"
+ },
+ {
+  "detection_id": "DET-000035",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000634",
+  "issue_type": "SELF_APPROVAL",
+  "detail": "step 1 approved by the requester"
+ },
+ {
+  "detection_id": "DET-000036",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000637",
+  "issue_type": "MISSING_COST_CENTER",
+  "detail": "claim has no cost centre"
+ },
+ {
+  "detection_id": "DET-000037",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000723",
+  "issue_type": "EXPENSE_OUTSIDE_EMPLOYMENT",
+  "detail": "line dated 2026-03-30 is outside employment"
+ },
+ {
+  "detection_id": "DET-000038",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000730",
+  "issue_type": "EXPENSE_OUTSIDE_EMPLOYMENT",
+  "detail": "line dated 2026-06-29 is outside employment"
+ },
+ {
+  "detection_id": "DET-000039",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000765",
+  "issue_type": "EXPENSE_OUTSIDE_EMPLOYMENT",
+  "detail": "line dated 2026-02-13 is outside employment"
+ },
+ {
+  "detection_id": "DET-000040",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000779",
+  "issue_type": "DUPLICATE_REIMBURSEMENT",
+  "detail": "paid more than once: RMB-2026-000694, RMB-2026-000736"
+ },
+ {
+  "detection_id": "DET-000041",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000810",
+  "issue_type": "EXPENSE_OUTSIDE_EMPLOYMENT",
+  "detail": "line dated 2026-04-16 is outside employment"
+ },
+ {
+  "detection_id": "DET-000042",
+  "entity_type": "EXPENSE_CLAIM",
+  "entity_id": "EXP-2026-000818",
+  "issue_type": "DUPLICATE_REIMBURSEMENT",
+  "detail": "paid more than once: RMB-2026-000714, RMB-2026-000752"
+ },
+ {
+  "detection_id": "DET-000043",
+  "entity_type": "LEAVE_REQUEST",
+  "entity_id": "LVE-2026-000071",
+  "issue_type": "SELF_APPROVAL",
+  "detail": "step 1 approved by the requester"
+ },
+ {
+  "detection_id": "DET-000044",
+  "entity_type": "LEAVE_REQUEST",
+  "entity_id": "LVE-2026-000085",
+  "issue_type": "NEGATIVE_LEAVE_BALANCE",
+  "detail": "approved 9 days with only 4.5 available"
+ },
+ {
+  "detection_id": "DET-000045",
+  "entity_type": "LEAVE_REQUEST",
+  "entity_id": "LVE-2026-000137",
+  "issue_type": "OVERLAPPING_APPROVED_LEAVE",
+  "detail": "overlaps approved LVE-2026-000107"
+ },
+ {
+  "detection_id": "DET-000046",
+  "entity_type": "LEAVE_REQUEST",
+  "entity_id": "LVE-2026-000182",
+  "issue_type": "OVERLAPPING_APPROVED_LEAVE",
+  "detail": "overlaps approved LVE-2026-000152"
+ },
+ {
+  "detection_id": "DET-000047",
+  "entity_type": "LEAVE_REQUEST",
+  "entity_id": "LVE-2026-000195",
+  "issue_type": "NEGATIVE_LEAVE_BALANCE",
+  "detail": "approved 10 days with only 7.0 available"
+ },
+ {
+  "detection_id": "DET-000048",
+  "entity_type": "LEAVE_REQUEST",
+  "entity_id": "LVE-2026-000248",
+  "issue_type": "NEGATIVE_LEAVE_BALANCE",
+  "detail": "approved 9 days with only 1.25 available"
+ },
+ {
+  "detection_id": "DET-000049",
+  "entity_type": "LEAVE_REQUEST",
+  "entity_id": "LVE-2026-000268",
+  "issue_type": "OVERLAPPING_APPROVED_LEAVE",
+  "detail": "overlaps approved LVE-2026-000252"
+ },
+ {
+  "detection_id": "DET-000050",
+  "entity_type": "LEAVE_REQUEST",
+  "entity_id": "LVE-2026-000273",
+  "issue_type": "NEGATIVE_LEAVE_BALANCE",
+  "detail": "approved 3 days with only 0.0 available"
+ },
+ {
+  "detection_id": "DET-000051",
+  "entity_type": "LEAVE_REQUEST",
+  "entity_id": "LVE-2026-000287",
+  "issue_type": "OVERLAPPING_APPROVED_LEAVE",
+  "detail": "overlaps approved LVE-2026-000232"
+ },
+ {
+  "detection_id": "DET-000052",
+  "entity_type": "LEAVE_REQUEST",
+  "entity_id": "LVE-2026-000305",
+  "issue_type": "OVERLAPPING_APPROVED_LEAVE",
+  "detail": "overlaps approved LVE-2026-000263"
+ },
+ {
+  "detection_id": "DET-000053",
+  "entity_type": "LEAVE_REQUEST",
+  "entity_id": "LVE-2026-000343",
+  "issue_type": "SELF_APPROVAL",
+  "detail": "step 1 approved by the requester"
+ },
+ {
+  "detection_id": "DET-000054",
+  "entity_type": "LEAVE_REQUEST",
+  "entity_id": "LVE-2026-000419",
+  "issue_type": "NEGATIVE_LEAVE_BALANCE",
+  "detail": "approved 10 days with only 8.5 available"
+ },
+ {
+  "detection_id": "DET-000055",
+  "entity_type": "LEAVE_REQUEST",
+  "entity_id": "LVE-2026-000459",
+  "issue_type": "NEGATIVE_LEAVE_BALANCE",
+  "detail": "approved 10 days with only 2.0 available"
+ },
+ {
+  "detection_id": "DET-000056",
+  "entity_type": "LEAVE_REQUEST",
+  "entity_id": "LVE-2026-000561",
+  "issue_type": "NEGATIVE_LEAVE_BALANCE",
+  "detail": "approved 5 days with only 0.0 available"
+ },
+ {
+  "detection_id": "DET-000057",
+  "entity_type": "LEAVE_REQUEST",
+  "entity_id": "LVE-2026-000620",
+  "issue_type": "NEGATIVE_LEAVE_BALANCE",
+  "detail": "approved 12 days with only 4.25 available"
+ },
+ {
+  "detection_id": "DET-000058",
+  "entity_type": "LEAVE_REQUEST",
+  "entity_id": "LVE-2026-000681",
+  "issue_type": "SELF_APPROVAL",
+  "detail": "step 1 approved by the requester"
+ }
+]

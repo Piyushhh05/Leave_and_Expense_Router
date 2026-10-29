@@ -1,0 +1,12 @@
+{% load ui %}
+<table class="table table-sm">
+  <thead><tr><th>Event</th><th>Date</th><th>From</th><th>To</th><th>By</th><th>Reason</th><th>Note</th></tr></thead>
+  <tbody>
+  {% for e in events %}
+    <tr><td>{{ e.event_id }}</td><td>{{ e.event_date }}</td><td>{{ e.from_status|default:"-" }}</td>
+        <td><span class="badge text-bg-{{ e.to_status|badge }}">{{ e.to_status }}</span></td>
+        <td>{% if e.actor %}{{ e.actor.full_name }}{% else %}System{% endif %}</td>
+        <td>{{ e.reason_code|pretty }}</td><td class="small">{{ e.note|default:"" }}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>

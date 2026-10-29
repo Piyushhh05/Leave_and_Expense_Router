@@ -1,0 +1,29 @@
+{% extends "workflow/base.html" %}{% load ui %}
+{% block content %}
+<h1 class="h3">Approver inbox</h1>
+<p class="text-muted">Shows the steps that are waiting for one approver. Approving moves the request to the next step; the last approval finishes it (and schedules the reimbursement for a claim).</p>
+<form class="row g-2 mb-3" method="get">
+  <div class="col-md-6"><select class="form-select" name="approver" onchange="this.form.submit()">
+    {% for a in approvers %}<option value="{{ a.pk }}" {% if a.pk == chosen %}selected{% endif %}>{{ a.full_name }} - {{ a.job_title }} ({{ a.pk }})</option>{% endfor %}</select></div>
+</form>
+{% for s in steps %}
+  {% with r=s.leave_request|default:s.expense_claim %}
+  <div class="card mb-3"><div class="card-body">
+    <div class="d-flex justify-content-between">
+      <div>
+        {% if s.leave_request %}<a href="{% url 'leave_detail' s.leave_request_id %}"><strong>{{ s.leave_request_id }}</strong></a> leave: {{ s.leave_request.start_date }} to {{ s.leave_request.end_date }} ({{ s.leave_request.business_days }} business days)
+        {% else %}<a href="{% url 'expense_detail' s.expense_claim_id %}"><strong>{{ s.expense_claim_id }}</strong></a> expense claim: {{ s.expense_claim.total_amount }} USD{% endif %}
+        <div class="small text-muted">Requester: {{ r.employee.full_name }} | Your role: {{ s.approver_role|pretty }} (step {{ s.step_no }})</div>
+        <div class="small">Why you: {{ s.routing_reason }}</div>
+      </div>
+    </div>
+    <form method="post" class="row g-2 mt-2">{% csrf_token %}
+      <input type="hidden" name="step_id" value="{{ s.pk }}"><input type="hidden" name="approver_id" value="{{ chosen }}">
+      <div class="col-md-6"><input class="form-control form-control-sm" name="comment" placeholder="Comment (optional)"></div>
+      <div class="col-auto"><button class="btn btn-success btn-sm" name="action" value="APPROVE">Approve</button>
+        <button class="btn btn-outline-danger btn-sm" name="action" value="REJECT">Reject</button></div>
+    </form>
+  </div></div>
+  {% endwith %}
+{% empty %}<div class="alert alert-secondary">Nothing waiting for this approver.</div>{% endfor %}
+{% endblock %}

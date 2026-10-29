@@ -1,0 +1,18 @@
+{% extends "workflow/base.html" %}{% load ui %}
+{% block content %}
+<h1 class="h3">Policies and approval rules</h1>
+<p class="text-muted">These tables drive the router. A system administrator changes them in the Admin site - no code change is needed.</p>
+<h2 class="h5">Approval rules (who must approve)</h2>
+<table class="table table-sm"><thead><tr><th>Rule</th><th>Domain</th><th>Approver role</th><th>Condition</th><th>Threshold</th><th>Match</th><th>Min level</th><th>Description</th></tr></thead>
+<tbody>{% for r in rules %}<tr><td>{{ r.pk }}</td><td>{{ r.domain }}</td><td>{{ r.step_role|pretty }}</td><td>{{ r.condition_type|pretty }}</td><td>{{ r.threshold|default_if_none:"" }}</td><td>{{ r.match_value|default_if_none:"" }}</td><td>{{ r.min_approver_level }}</td><td class="small">{{ r.description }}</td></tr>{% endfor %}</tbody></table>
+<p class="small">A role appears once in a path, tied to the first rule that required it. Roles are asked in this order: manager, manager's manager, finance controller, HR head, CFO. If the same person would approve twice, the later step is skipped.</p>
+<div class="row g-4">
+  <div class="col-lg-6"><h2 class="h5">Leave policies</h2>
+    <table class="table table-sm"><thead><tr><th>Policy</th><th>Countries</th><th>Days / year</th><th>Per month</th><th>Carry cap</th><th>Max in a row</th></tr></thead>
+    <tbody>{% for p in leave_policies %}<tr><td>{{ p.name }}</td><td>{{ p.applies_to_countries }}</td><td>{{ p.annual_days }}</td><td>{{ p.accrual_per_month }}</td><td>{{ p.carry_forward_cap }}</td><td>{{ p.max_consecutive_days }}</td></tr>{% endfor %}</tbody></table></div>
+  <div class="col-lg-6"><h2 class="h5">Expense policies</h2>
+    <table class="table table-sm"><thead><tr><th>Category</th><th class="text-end">Max per line</th><th class="text-end">Receipt needed above</th></tr></thead>
+    <tbody>{% for p in expense_policies %}<tr><td>{{ p.category|pretty }}</td><td class="text-end">{{ p.max_line_amount }}</td><td class="text-end">{{ p.receipt_required_above }}</td></tr>{% endfor %}</tbody></table>
+    <p class="small">A line up to {{ tolerance }}% over its limit can be approved by the finance controller as an exception; beyond that it is rejected. A claim that pushes its cost centre over budget goes to the CFO, who rejects it if the overshoot is more than {{ overshoot }}%.</p></div>
+</div>
+{% endblock %}

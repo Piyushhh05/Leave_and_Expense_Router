@@ -1,0 +1,7 @@
+leave_policy_id,name,leave_type,applies_to_countries,annual_days,accrual_per_month,carry_forward_cap,max_consecutive_days,deducts_balance,effective_from,effective_to
+LPOL-01,Annual Leave - India,ANNUAL,IN,18,1.5,5,15,1,2025-01-01,
+LPOL-02,Annual Leave - USA,ANNUAL,US,15,1.25,5,15,1,2025-01-01,
+LPOL-03,Annual Leave - UK/Germany,ANNUAL,UK|DE,24,2.0,5,20,1,2025-01-01,
+LPOL-04,Sick Leave - Global,SICK,ALL,12,1.0,0,5,1,2025-01-01,
+LPOL-05,Casual Leave - Global,CASUAL,ALL,6,0.5,0,2,1,2025-01-01,
+LPOL-06,Unpaid Leave - Global,UNPAID,ALL,0,0.0,0,30,0,2025-01-01,

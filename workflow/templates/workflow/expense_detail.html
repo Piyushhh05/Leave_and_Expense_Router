@@ -1,0 +1,38 @@
+{% extends "workflow/base.html" %}{% load ui %}
+{% block content %}
+<a href="{% url 'expense_list' %}" class="small">&larr; all expense claims</a>
+<h1 class="h3 mt-1">{{ claim.pk }} <span class="badge text-bg-{{ claim.status|badge }}">{{ claim.status|pretty }}</span></h1>
+<div class="row g-3 mb-3">
+  <div class="col-md-6"><div class="card"><div class="card-body">
+    <table class="table table-sm mb-0">
+      <tr><th>Employee</th><td><a href="{% url 'employee_detail' claim.employee_id %}">{{ claim.employee.full_name }}</a> ({{ claim.employee_country }})</td></tr>
+      <tr><th>Purpose</th><td>{{ claim.purpose }}</td></tr>
+      <tr><th>Submitted</th><td>{{ claim.submitted_date }}</td></tr>
+      <tr><th>Total</th><td><strong>{{ claim.total_amount }} USD</strong> over {{ claim.line_count }} line(s)</td></tr>
+      <tr><th>Cost centre</th><td>{% if claim.cost_center %}{{ claim.cost_center }}{% else %}<span class="badge text-bg-danger">missing</span>{% endif %}</td></tr>
+    </table></div></div></div>
+  <div class="col-md-6"><div class="card h-100"><div class="card-header">Decision explained</div><div class="card-body">
+    <p class="mb-1"><strong>Final reason:</strong> {{ claim.final_reason_code|pretty }}</p>
+    <p class="mb-1"><strong>Decision date:</strong> {{ claim.final_decision_date|default:"not decided yet" }}</p>
+    <p class="mb-1"><strong>Policy breach:</strong> {% if claim.has_policy_breach %}<span class="badge text-bg-warning">a line is above its limit</span>{% else %}no{% endif %}</p>
+    <p class="mb-0"><strong>Budget:</strong> {% if claim.budget_exceeded %}<span class="badge text-bg-warning">pushes the cost centre over budget</span>{% else %}within budget{% endif %}
+      {% if claim.cost_center %}<br><span class="small text-muted">{{ claim.cost_center.name }} has used ${{ cost_center_spent|floatformat:0 }} of ${{ claim.cost_center.annual_budget|floatformat:0 }} (approved claims only)</span>{% endif %}</p>
+  </div></div></div>
+</div>
+<h2 class="h5">Lines and receipts</h2>
+<table class="table table-sm align-middle">
+  <thead><tr><th>#</th><th>Date</th><th>Category</th><th>Merchant</th><th class="text-end">Amount</th><th class="text-end">Limit</th><th>Limit check</th><th>Receipt</th></tr></thead>
+  <tbody>{% for x in lines %}{% with l=x.line %}
+    <tr><td>{{ l.line_no }}</td><td>{{ l.expense_date }}</td><td>{{ l.expense_policy.category|pretty }}</td><td>{{ l.merchant }}</td>
+        <td class="text-end">{{ l.amount }}</td><td class="text-end">{{ x.limit }}</td>
+        <td>{% if x.policy_status == "WITHIN" %}<span class="badge text-bg-success">within</span>{% elif x.policy_status == "TOLERATED" %}<span class="badge text-bg-warning">up to 120%</span>{% else %}<span class="badge text-bg-danger">over 120%</span>{% endif %}</td>
+        <td>{% if l.receipt_provided %}{{ l.receipt_file_name }} <code>{{ l.receipt_hash }}</code>{% elif x.receipt_needed %}<span class="badge text-bg-danger">required, missing</span>{% else %}<span class="text-muted">not required</span>{% endif %}</td></tr>
+  {% endwith %}{% endfor %}</tbody>
+</table>
+<h2 class="h5">Approval steps</h2>{% include "workflow/_steps.html" %}
+<h2 class="h5">Reimbursements</h2>
+<table class="table table-sm"><thead><tr><th>Id</th><th>Amount</th><th>Method</th><th>Approved</th><th>Payment date</th><th>Status</th></tr></thead>
+<tbody>{% for r in reimbursements %}<tr><td>{{ r.pk }}</td><td>{{ r.amount }}</td><td>{{ r.payment_method|pretty }}</td><td>{{ r.approved_date }}</td><td>{{ r.payment_date }}</td><td><span class="badge text-bg-{{ r.status|badge }}">{{ r.status }}</span></td></tr>
+{% empty %}<tr><td colspan="6" class="text-muted">No payment record: a reimbursement is created only after final approval.</td></tr>{% endfor %}</tbody></table>
+<h2 class="h5">Status history (never overwritten)</h2>{% include "workflow/_events.html" %}
+{% endblock %}

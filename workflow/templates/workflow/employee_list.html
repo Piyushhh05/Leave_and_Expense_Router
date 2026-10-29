@@ -1,0 +1,8 @@
+{% extends "workflow/base.html" %}
+{% block content %}
+<h1 class="h3">Employees</h1>
+<form class="row g-2 mb-3" method="get"><div class="col-md-6"><input class="form-control" name="q" value="{{ q }}" placeholder="Search name, id or department"></div><div class="col-md-2"><button class="btn btn-primary w-100">Search</button></div></form>
+<table class="table table-hover table-sm"><thead><tr><th>Id</th><th>Name</th><th>Title</th><th>Department</th><th>Country</th><th>Manager</th><th>Cost centre</th><th>Status</th></tr></thead>
+<tbody>{% for e in page %}<tr><td><a href="{% url 'employee_detail' e.pk %}">{{ e.pk }}</a></td><td>{{ e.full_name }}</td><td>{{ e.job_title }}</td><td>{{ e.department }}</td><td>{{ e.country }}</td><td>{{ e.manager.full_name|default:"-" }}</td><td>{{ e.cost_center_id }}</td><td>{{ e.status }}</td></tr>{% endfor %}</tbody></table>
+{% include "workflow/_pager.html" %}
+{% endblock %}

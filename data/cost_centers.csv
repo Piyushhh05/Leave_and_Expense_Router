@@ -1,0 +1,26 @@
+cost_center_id,name,country,department,annual_budget
+CC-000,Executive Office,US,Executive,3600
+CC-001,Engineering DE,DE,Engineering,46800
+CC-002,Engineering IN,IN,Engineering,129600
+CC-003,Engineering UK,UK,Engineering,54000
+CC-004,Engineering US,US,Engineering,32400
+CC-005,Finance DE,DE,Finance,18000
+CC-006,Finance IN,IN,Finance,115200
+CC-007,Finance UK,UK,Finance,25200
+CC-008,Finance US,US,Finance,39600
+CC-009,HR DE,DE,HR,18000
+CC-010,HR IN,IN,HR,147600
+CC-011,HR UK,UK,HR,28800
+CC-012,HR US,US,HR,43200
+CC-013,Marketing DE,DE,Marketing,25200
+CC-014,Marketing IN,IN,Marketing,111600
+CC-015,Marketing UK,UK,Marketing,43200
+CC-016,Marketing US,US,Marketing,57600
+CC-017,Operations DE,DE,Operations,46800
+CC-018,Operations IN,IN,Operations,104400
+CC-019,Operations UK,UK,Operations,21600
+CC-020,Operations US,US,Operations,61200
+CC-021,Sales DE,DE,Sales,36000
+CC-022,Sales IN,IN,Sales,126000
+CC-023,Sales UK,UK,Sales,36000
+CC-024,Sales US,US,Sales,68400

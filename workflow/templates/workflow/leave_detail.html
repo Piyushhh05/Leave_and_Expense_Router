@@ -1,0 +1,28 @@
+{% extends "workflow/base.html" %}{% load ui %}
+{% block content %}
+<a href="{% url 'leave_list' %}" class="small">&larr; all leave requests</a>
+<h1 class="h3 mt-1">{{ leave.pk }} <span class="badge text-bg-{{ leave.status|badge }}">{{ leave.status|pretty }}</span></h1>
+<div class="row g-3 mb-3">
+  <div class="col-md-6"><div class="card"><div class="card-body">
+    <table class="table table-sm mb-0">
+      <tr><th>Employee</th><td><a href="{% url 'employee_detail' leave.employee_id %}">{{ leave.employee.full_name }}</a> ({{ leave.employee.country }})</td></tr>
+      <tr><th>Policy</th><td>{{ leave.leave_policy.name }}</td></tr>
+      <tr><th>Dates</th><td>{{ leave.start_date }} to {{ leave.end_date }}</td></tr>
+      <tr><th>Calendar days</th><td>{{ leave.calendar_days }}</td></tr>
+      <tr><th>Business days</th><td>{{ leave.business_days }} <span class="text-muted small">({{ weekend_days }} weekend / holiday days not counted)</span></td></tr>
+      <tr><th>Submitted</th><td>{{ leave.submitted_date }}</td></tr>
+      <tr><th>Reason given</th><td>{{ leave.request_reason }}</td></tr>
+    </table></div></div></div>
+  <div class="col-md-6"><div class="card h-100"><div class="card-header">Decision explained</div><div class="card-body">
+    <p class="mb-1"><strong>Final reason:</strong> {{ leave.final_reason_code|pretty }}</p>
+    <p class="mb-1"><strong>Decision date:</strong> {{ leave.final_decision_date|default:"not decided yet" }}</p>
+    {% if leave.balance_at_submission != None %}
+      <p class="mb-1"><strong>Balance when submitted:</strong> {{ leave.balance_at_submission }} days, request needs {{ leave.business_days }}
+        {% if leave.business_days > leave.balance_at_submission %}<span class="badge text-bg-danger">not enough</span>{% else %}<span class="badge text-bg-success">enough</span>{% endif %}</p>
+    {% else %}<p class="mb-1 text-muted">This leave type does not use a balance.</p>{% endif %}
+    {% if balance %}<p class="mb-0"><strong>Balance today:</strong> opening {{ balance.opening_balance }} + accrued {{ balance.accrued_days }} - used {{ balance.used_days }} - pending {{ balance.pending_days }} = <strong>{{ balance.available_days }}</strong></p>{% endif %}
+  </div></div></div>
+</div>
+<h2 class="h5">Approval steps</h2>{% include "workflow/_steps.html" %}
+<h2 class="h5">Status history (never overwritten)</h2>{% include "workflow/_events.html" %}
+{% endblock %}

@@ -1,0 +1,66 @@
+[
+ {
+  "expense_policy_id": "EPOL-01",
+  "category": "MEALS",
+  "max_line_amount": 100,
+  "receipt_required_above": 25,
+  "effective_from": "2025-01-01",
+  "effective_to": null
+ },
+ {
+  "expense_policy_id": "EPOL-02",
+  "category": "TRAVEL",
+  "max_line_amount": 1500,
+  "receipt_required_above": 0,
+  "effective_from": "2025-01-01",
+  "effective_to": null
+ },
+ {
+  "expense_policy_id": "EPOL-03",
+  "category": "LODGING",
+  "max_line_amount": 450,
+  "receipt_required_above": 0,
+  "effective_from": "2025-01-01",
+  "effective_to": null
+ },
+ {
+  "expense_policy_id": "EPOL-04",
+  "category": "SUPPLIES",
+  "max_line_amount": 300,
+  "receipt_required_above": 20,
+  "effective_from": "2025-01-01",
+  "effective_to": null
+ },
+ {
+  "expense_policy_id": "EPOL-05",
+  "category": "TRAINING",
+  "max_line_amount": 3000,
+  "receipt_required_above": 0,
+  "effective_from": "2025-01-01",
+  "effective_to": null
+ },
+ {
+  "expense_policy_id": "EPOL-06",
+  "category": "CLIENT_ENTERTAINMENT",
+  "max_line_amount": 600,
+  "receipt_required_above": 0,
+  "effective_from": "2025-01-01",
+  "effective_to": null
+ },
+ {
+  "expense_policy_id": "EPOL-07",
+  "category": "SOFTWARE",
+  "max_line_amount": 400,
+  "receipt_required_above": 0,
+  "effective_from": "2025-01-01",
+  "effective_to": null
+ },
+ {
+  "expense_policy_id": "EPOL-08",
+  "category": "EQUIPMENT",
+  "max_line_amount": 3500,
+  "receipt_required_above": 0,
+  "effective_from": "2025-01-01",
+  "effective_to": null
+ }
+]
