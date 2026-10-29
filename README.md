@@ -1,6 +1,6 @@
 # Leave & Expense Router
 
-A working solution for the **72 Hours Code Challenge – Route leave and expense requests using policy, balances, budgets and approval authority.**
+A working solution for the **Code Challenge – Route leave and expense requests using policy, balances, budgets and approval authority.**
 
 It has three parts that share one set of business rules:
 
@@ -210,7 +210,7 @@ IDs are zero padded, never reused, and referenced identically everywhere. All fo
 
 ---
 
-## 5. Results (reproduce with the commands in section 1)
+## 5. Results
 
 | Check | Result |
 |---|---|
@@ -273,39 +273,3 @@ leave_expense_router/
 └── docs/                     data_dictionary.md, validation_summary.md, audit_report.md,
                               metrics.json, reproducibility.txt, source_manifest.md, screenshots/
 ```
-
-### How to explain the key ideas
-
-* **One source of truth for rules.** `rules.py` is imported by the generator, the audit and the web app. A routing change is made once.
-* **Rules as data.** Who approves what lives in the `approval_rules` table; `rule_matches()` is a short if/elif over the condition type.
-* **Why two passes for leave?** Pass one finds requests that failed exactly one check; pass two re-runs with a few of them approved "by override". Balances and later requests then change consistently, so derived values stay correct.
-* **Why walk requests in ID order?** Balance, overlap, duplicate receipt and budget all depend on what happened *earlier*. IDs follow submission date, so ID order is time order.
-* **Per-request random generator.** Step timing uses `random.Random(f"{seed}-{request_id}")`, so it does not depend on processing order and stays reproducible.
-* **Ground truth is separate.** It lives in its own table/file; decision code never reads it. Only the evaluation page and the audit do.
-* **History is append-only.** Status changes insert `status_events` rows; the request row holds only the current status.
-
-### Likely interview questions
-
-1. *Where does a request's approval path come from?* `required_steps()` evaluates every `approval_rules` row against the request's facts, keeps one row per role, orders the roles, and `resolve_approver()` finds the person from the manager chain.
-2. *What happens if a director's manager is also the CFO?* The same person would approve twice, so the later step is stored as `SKIPPED` (`SAME_APPROVER_EARLIER_STEP`).
-3. *How is a balance computed?* Opening + accrued − used − pending, where accrued is `min(annual, per_month × months employed)` and used/pending are sums over the requests.
-4. *Why can a request be rejected without any approver?* Screening failures are system decisions; there are no steps and the reason code says why.
-5. *How do you stop someone approving their own request?* `decide_step()` refuses it; the detector `self_approval` finds the 6 planted violations.
-6. *How do you know the detectors are good?* They only read input tables; they are scored against the separate ground truth (precision and recall), and the checkers were tested with deliberately corrupted data.
-7. *How is reproducibility achieved?* One `random.Random(seed)`, no `date.today()` in generation (fixed as-of date 2026-10-22), sorted output, deterministic IDs and per-request generators; checksums compared across two separate runs.
-8. *What stops overshooting a budget?* `budget_position()` compares approved spend plus the new claim to the annual budget; the CFO may approve up to 10 % over, beyond that the claim is rejected.
-
----
-
-## 8. Simplifications and limits (so nothing surprises you)
-
-* **Everything is synthetic.** No external data, no real people. Names are invented; e-mails use the reserved `example.com`. Holidays are *illustrative*, not an official calendar. See `docs/source_manifest.md`.
-* **Single currency (USD)**, no FX. One year (2026). Whole business days only (no half days).
-* **Only levels 1–3 raise requests**; the finance controller is an approver only. The CEO, VPs, CFO and HR head do not raise requests.
-* **Leave requests start from mid-February** so that monthly accrual has built up; otherwise most January requests would fail the balance check.
-* **Budget used = approved claims only.** Pending claims do not reserve budget. A budget overshoot that is approved as an exception is allowed to stay up to 10 % over.
-* **Approver decisions in the generated data are rule-driven**, not human judgement; manual rejections exist only in the web app.
-* **The audit shares `rules.py` with the generator.** Its job is consistency (the stored data really follows the documented rules, and every deviation is a labelled plant), not an independent second opinion on the rules themselves. Ground-truth labels for baseline cases are derived from the same rules, as the brief asks ("documented rules, not independent random assignment"); the seven planted anomalies are the independent part.
-* **No login.** The demo pages let you choose who you act as; a real deployment would put authentication in front of the inbox. Django's admin does require a superuser.
-* **The inbox uses today's date** for new decisions. Rows created through the app after the dataset's as-of date make `validate_data.py`'s "PAID if payment date ≤ as-of date" rule not applicable to them, so run the validators on the generated files, not on a database you have played with.
-* Tested with MariaDB 10.11 and Django 6.1; the SQL uses only standard MySQL features (InnoDB, ENUM, CHECK, foreign keys).
