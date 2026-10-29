@@ -42,14 +42,6 @@ python manage.py runserver          # open http://127.0.0.1:8000
 
 Optional: `python manage.py createsuperuser` to log in to `/admin/` (the system administrator's screen).
 
-**Prefer plain SQL?** The same database can be built without Django:
-
-```bash
-mysql -u root -p leave_expense_router < sql/schema.sql
-mysql -u root -p leave_expense_router < data/seed_data.sql
-mysql -u root -p leave_expense_router < data/seed_evaluation.sql   # ground truth + detections
-```
-
 ### Regenerate and verify the data (no database needed)
 
 ```bash
